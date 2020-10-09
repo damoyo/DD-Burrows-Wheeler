@@ -1,18 +1,17 @@
 def get_bwt(line):
     #print(line + '   ---for line')
     array = []
-
     for i in range(len(line)):
 
         st = line[i:] + line[0:i] # generating cyclic rotations
         array.append(st)
     array.sort() # sorting the cyclic rotations according to unicode values
-    #print(array)
+    print(array)
 
     bwt = []
     for i in range(len(array)):
         bwt.append(array[i][-1])
-        #print(bwt)
+        print(bwt)
     return bwt
 
 def compress(bwt):
